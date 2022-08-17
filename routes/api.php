@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('wechat')->group(function() {
+    Route::get('verify', [\App\Http\Controllers\WechatController::class, 'verify']);
+});
+
